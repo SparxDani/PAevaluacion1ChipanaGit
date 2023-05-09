@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private BulletController bulletPrefab;
     [SerializeField] private CameraController cameraReference;
+    [SerializeField] private InputActionReference movement, fire, aim;
 
     private AudioSource audioSource; // Componente AudioSource para reproducir el sonido
 

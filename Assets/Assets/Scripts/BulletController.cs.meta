@@ -3,7 +3,9 @@ guid: c65cd7d3e13567441bc7277348d08172
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - myRGB2D: {instanceID: 0}
+  - shootSound: {fileID: 8300000, guid: 93ce6416eb8652143b025f0fb5e4ddcd, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

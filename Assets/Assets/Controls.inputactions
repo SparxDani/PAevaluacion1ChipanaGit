@@ -31,6 +31,33 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "AimJoystick",
+                    "type": "Value",
+                    "id": "f961dad0-6a75-417b-823f-3ad52114dcaf",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "FireApad",
+                    "type": "Button",
+                    "id": "2aaef4d9-7d87-401e-9903-3537a4e3e96f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "MoveDpad",
+                    "type": "Value",
+                    "id": "6ccf4287-9062-4060-9c91-7718e1a3aeee",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -110,46 +137,11 @@
                     "action": "Aim",
                     "isComposite": false,
                     "isPartOfComposite": false
-                }
-            ]
-        },
-        {
-            "name": "Gamepad",
-            "id": "efd63176-8778-464b-8f4e-1b44cae5a047",
-            "actions": [
-                {
-                    "name": "MoveDpad",
-                    "type": "Value",
-                    "id": "8c30da91-8a17-48da-b4c6-c99ce6a1b476",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
                 },
-                {
-                    "name": "FireApad",
-                    "type": "Button",
-                    "id": "6e740e2e-cad4-4b31-9f13-fe526fc435c1",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "AimJoystick",
-                    "type": "Value",
-                    "id": "c617afce-ad4e-4be9-ab4b-4532651a3ab4",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                }
-            ],
-            "bindings": [
                 {
                     "name": "",
-                    "id": "19dc50c5-ad05-4af4-80b7-05d3e95bf7d1",
-                    "path": "<XInputController>/dpad/up",
+                    "id": "c34cd736-a0e9-4e82-99d1-0da9a758456e",
+                    "path": "<Gamepad>/dpad",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -159,8 +151,8 @@
                 },
                 {
                     "name": "",
-                    "id": "c13ea789-40f0-4f07-b938-52104e3b1fdd",
-                    "path": "<XInputController>/dpad/down",
+                    "id": "cc796fe9-e487-424b-823c-be682985a7bf",
+                    "path": "<Gamepad>/dpad",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -170,8 +162,8 @@
                 },
                 {
                     "name": "",
-                    "id": "3613b586-25db-49d6-93fd-1d599fba003c",
-                    "path": "<XInputController>/dpad/left",
+                    "id": "047f683f-8a66-4e3e-9fe8-ea557c816df6",
+                    "path": "<Gamepad>/dpad",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -181,8 +173,8 @@
                 },
                 {
                     "name": "",
-                    "id": "606ee2ec-a656-4c9e-8077-228aa73e25a4",
-                    "path": "<XInputController>/dpad/right",
+                    "id": "ea71e5c6-35d8-4d1d-af83-2aa0af34acb5",
+                    "path": "<Gamepad>/dpad",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -192,7 +184,7 @@
                 },
                 {
                     "name": "",
-                    "id": "2d7e7712-6b2e-4178-b21f-89eddad05243",
+                    "id": "e6c81c73-28b4-4ee4-8533-7ae6c33afd71",
                     "path": "<XInputController>/buttonSouth",
                     "interactions": "",
                     "processors": "",
@@ -203,7 +195,7 @@
                 },
                 {
                     "name": "",
-                    "id": "bfef7835-a77d-41ae-99bc-52f41dd0b314",
+                    "id": "ce2a8476-36d1-4feb-9f66-fd3af211f728",
                     "path": "<Gamepad>/rightStick",
                     "interactions": "",
                     "processors": "",

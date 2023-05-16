@@ -15,11 +15,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private CameraController cameraReference;
     public PlayerInput _playerInput;
 
-    private AudioSource audioSource; // Componente AudioSource para reproducir el sonido
+    private AudioSource audioSource; 
 
     private void Awake()
     {
-        // Obtener o añadir un componente AudioSource al objeto
         audioSource = GetComponent<AudioSource>();
         if (audioSource == null)
         {
@@ -37,10 +36,8 @@ public class PlayerController : MonoBehaviour
 
     private void OnHit()
     {
-        // Reproducir el sonido de golpe
-        // Aquí debes asignar el AudioClip adecuado para el sonido de golpe
-        // Puedes asignarlo desde el Inspector de Unity
-        AudioClip hitSound = null; // Asigna el AudioClip para el sonido de golpe
+        
+        AudioClip hitSound = null; 
         if (hitSound != null)
         {
             audioSource.PlayOneShot(hitSound);

@@ -47,11 +47,14 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         Vector2 movementInput = _playerInput.actions["Movement"].ReadValue<Vector2>();
+        //Vector2 movementInput = _playerInput.actions["MoveDpad"].ReadValue<Vector2>();
+
         myRBD2.velocity = movementInput * velocityModifier;
 
         animatorController.SetVelocity(velocityCharacter: myRBD2.velocity.magnitude);
 
         Vector2 aimInput = _playerInput.actions["Aim"].ReadValue<Vector2>();
+        //Vector2 aimInput = _playerInput.actions["AimJoystick"].ReadValue<Vector2>();
         Vector3 mouseInput = Camera.main.ScreenToWorldPoint(aimInput);
 
         CheckFlip(mouseInput.x);
@@ -68,6 +71,15 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("Right Click");
         }
+        /*if (_playerInput.actions["FireApad"].triggered)
+        {
+            BulletController myBullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+            myBullet.SetUpVelocity(distance.normalized, gameObject.tag);
+        }
+        else if (Input.GetMouseButtonDown(1))
+        {
+            Debug.Log("Right Click");
+        }*/
     }
 
     private void CheckFlip(float x_Position)

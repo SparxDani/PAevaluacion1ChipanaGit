@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
+
 
 public class PlayerController : MonoBehaviour
 {
@@ -11,6 +13,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private BulletController bulletPrefab;
     [SerializeField] private CameraController cameraReference;
+    public PlayerInput _playerInput;
 
     private AudioSource audioSource; // Componente AudioSource para reproducir el sonido
 
@@ -29,6 +32,7 @@ public class PlayerController : MonoBehaviour
         HealthBarController healthBarController = GetComponent<HealthBarController>();
         healthBarController.onHit += OnHit;
         healthBarController.onHit += cameraReference.CallScreenShake;
+        _playerInput = GetComponent<PlayerInput>();
     }
 
     private void OnHit()
@@ -45,19 +49,20 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        Vector2 movementPlayer = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-        myRBD2.velocity = movementPlayer * velocityModifier;
+        Vector2 movementInput = _playerInput.actions["Movement"].ReadValue<Vector2>();
+        myRBD2.velocity = movementInput * velocityModifier;
 
         animatorController.SetVelocity(velocityCharacter: myRBD2.velocity.magnitude);
 
-        Vector3 mouseInput = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 aimInput = _playerInput.actions["Aim"].ReadValue<Vector2>();
+        Vector3 mouseInput = Camera.main.ScreenToWorldPoint(aimInput);
 
         CheckFlip(mouseInput.x);
 
         Vector3 distance = mouseInput - transform.position;
         Debug.DrawRay(transform.position, distance * rayDistance, Color.red);
 
-        if (Input.GetMouseButtonDown(0))
+        if (_playerInput.actions["Fire"].triggered)
         {
             BulletController myBullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
             myBullet.SetUpVelocity(distance.normalized, gameObject.tag);
